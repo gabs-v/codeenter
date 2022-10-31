@@ -9,11 +9,13 @@ module.exports = {
         })
         .catch((err) => console.log(err))
     },
-    findAllEntries: (req,res => {
+    
+    findAllEntries: (req,res) => {
         Entry.find()
         .then((allEntries) => {
-            console.log(allEntries),
+            console.log({allEntries}),
             res.json(allEntries)
         })
-    })
+        .catch((err) => console.log(err))
+    }
 }
